@@ -1,5 +1,4 @@
 import { StyleSheet, View } from 'react-native';
-
 import GymAppMain from './components/gym-app-main';
 
 export default function App() {
