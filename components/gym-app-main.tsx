@@ -9,10 +9,11 @@ const RootStack = createStackNavigator();
 const GymAppMain = () => (
   <NavigationContainer>
     <RootStack.Navigator
-      /* @ts-ignore */
-      headerMode="none"
-      mode="modal"
-      screenOptions={{ animationEnabled: false }}
+      screenOptions={{
+        animationEnabled: false,
+        headerShown: false,
+        presentation: 'modal'
+      }}
     >
       <RootStack.Screen name={TabNames.tabs} component={TabNavigationBar} />
       <RootStack.Screen name={TabNames.newWorkout} component={SetupWorkout} options={{ animationEnabled: true }} />

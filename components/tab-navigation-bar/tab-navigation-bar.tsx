@@ -18,7 +18,6 @@ const TabNavigationBar = () => {
       tabBarActiveTintColor: '#2fa6ff',
       tabBarInactiveTintColor: 'gray',
       tabBarShowLabel: false,
-      tabBarStyle: { backgroundColor: 'red' }
     })}>
       <Tab.Screen name={TabNames.history} component={WorkoutHistory} />
       <Tab.Screen name={TabNames.newWorkoutForTabIcon} component={tempModalComponent}

@@ -1,5 +1,7 @@
 import React from 'react';
-import { Pressable, Text, View, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
+import HeaderBar from '../util/header-bar/header-bar';
+import SaveButton from '../util/save-button/save-button';
 
 interface SetupWorkoutProps {
   navigation: () => void;
@@ -11,33 +13,16 @@ const SetupWorkout: React.FC<SetupWorkoutProps> = ({ navigation }) => {
       display: 'flex',
       height: '100%',
     },
-    button: {
-      position: 'absolute',
-      bottom: 0,
-      alignItems: 'center',
-      justifyContent: 'center',
-      paddingVertical: 15,
-      width: '100%',
-      height: 90,
-      backgroundColor: 'blue',
-    },
-    buttonText: {
-      fontSize: 16,
-      lineHeight: 21,
-      fontWeight: 'bold',
-      letterSpacing: 0.25,
-      color: 'white',
-    },
+
   });
   return (
     <View style={styles.mainView}>
-      <Text >
-        New Workout
-      </Text>
-      {/* @ts-ignore */}
-      <Pressable style={styles.button} onPress={() => navigation.goBack()} >
-        <Text style={styles.buttonText}>Save Workout</Text>
-      </Pressable>
+      <HeaderBar
+        title='New Workout'
+        shouldHaveCloseIcon
+        navigation={navigation}
+      />
+      <SaveButton title='Save Workout' navigation={navigation} />
     </View>
   );
 };
