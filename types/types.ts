@@ -1,5 +1,7 @@
 export enum TabNames {
+  tabs = 'Tabs',
   history = 'History',
-  newWorkout = 'New Workout',
+  newWorkout = 'newWorkout',
+  newWorkoutForTabIcon = 'New',
   timer = 'Timer'
 }

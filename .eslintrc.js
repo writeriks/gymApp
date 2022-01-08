@@ -25,6 +25,7 @@ module.exports = {
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['warn'],
     '@typescript-eslint/no-unused-vars': ['warn'],
+    '@typescript-eslint/ban-ts-comment': ['never'],
     'no-unused-vars': ['warn'],
     'space-before-function-paren': 0,
     'jsx-quotes': ['warn', 'prefer-double'],
