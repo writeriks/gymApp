@@ -5,3 +5,9 @@ export enum TabNames {
   newWorkoutForTabIcon = 'New',
   timer = 'Timer'
 }
+
+export enum workoutTypes {
+  straight = 'Straight',
+  superset = 'superset',
+  interval = 'interval',
+}
