@@ -9,23 +9,23 @@ import displayReducerActionCreator from '../../store/reducers/display-reducer/di
 
 import { WorkoutType } from '../../store/reducers/display-reducer/display-reducer-types'
 
-const StraightWorkout = () => {
-  const isFocused = useIsFocused()
+const IntervalWorkout = () => {
+  const isFocus = useIsFocused()
   const dispatch = useDispatch()
 
   useEffect(() => {
-    if (isFocused) {
-      dispatch(displayReducerActionCreator.setWorkoutType(WorkoutType.STRAIGHT))
+    if (isFocus) {
+      dispatch(displayReducerActionCreator.setWorkoutType(WorkoutType.INTERVAL))
     }
-  })
+  }, [isFocus])
 
   return (
     <View>
       <Text>
-        StraightWorkout
+        IntervalWorkout
       </Text>
     </View>
   )
 }
 
-export default StraightWorkout
+export default IntervalWorkout

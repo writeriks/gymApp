@@ -1,5 +1,7 @@
 import { StyleSheet, View } from 'react-native';
 import GymAppMain from './components/gym-app-main';
+import { Provider } from 'react-redux'
+import { store } from './store/createStore'
 
 export default function App() {
   const styles = StyleSheet.create({
@@ -11,7 +13,9 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <GymAppMain />
+      <Provider store={store}>
+        <GymAppMain />
+      </Provider>
     </View>
   );
 }

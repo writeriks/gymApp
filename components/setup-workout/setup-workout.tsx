@@ -1,12 +1,14 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import HeaderBar from '../util/header-bar/header-bar';
+
 import SaveButton from '../util/save-button/save-button';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { workoutTypes } from '../../types/types';
+
 import StraightWorkout from './straight-workout';
 import SupersetWorkout from './superset-workout';
-import IntervalWorkout from './interval-workout copy';
+import IntervalWorkout from './interval-workout';
+
+import { workoutTypeTabs } from '../../types/types';
 
 interface SetupWorkoutProps {
   navigation: () => void;
@@ -21,12 +23,13 @@ const SetupWorkout: React.FC<SetupWorkoutProps> = ({ navigation }) => {
       flexDirection: 'column'
     },
   });
+
   return (
     <View style={styles.mainView}>
       <Tab.Navigator>
-        <Tab.Screen name={workoutTypes.straight} component={StraightWorkout} />
-        <Tab.Screen name={workoutTypes.superset} component={SupersetWorkout} />
-        <Tab.Screen name={workoutTypes.interval} component={IntervalWorkout} />
+        <Tab.Screen name={workoutTypeTabs.straight} component={StraightWorkout} />
+        <Tab.Screen name={workoutTypeTabs.superset} component={SupersetWorkout} />
+        <Tab.Screen name={workoutTypeTabs.interval} component={IntervalWorkout} />
       </Tab.Navigator>
       <SaveButton title='Save Workout' navigation={navigation} />
     </View>
