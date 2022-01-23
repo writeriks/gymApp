@@ -8,7 +8,7 @@ import StraightWorkout from './straight-workout/straight-workout';
 import SupersetWorkout from './superset-workout/superset-workout';
 import IntervalWorkout from './interval-workout/interval-workout';
 
-import { workoutTypeTabs } from '../../types/types';
+import { WorkoutTabsType } from '../../types/types';
 
 interface SetupWorkoutProps {
   navigation: () => void;
@@ -27,9 +27,9 @@ const SetupWorkout: React.FC<SetupWorkoutProps> = ({ navigation }) => {
   return (
     <View style={styles.mainView}>
       <Tab.Navigator>
-        <Tab.Screen name={workoutTypeTabs.straight} component={StraightWorkout} />
-        <Tab.Screen name={workoutTypeTabs.superset} component={SupersetWorkout} />
-        <Tab.Screen name={workoutTypeTabs.interval} component={IntervalWorkout} />
+        <Tab.Screen name={WorkoutTabsType.straight} component={StraightWorkout} />
+        <Tab.Screen name={WorkoutTabsType.superset} component={SupersetWorkout} />
+        <Tab.Screen name={WorkoutTabsType.interval} component={IntervalWorkout} />
       </Tab.Navigator>
       <SaveButton title='Save Workout' navigation={navigation} />
     </View>

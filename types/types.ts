@@ -6,7 +6,7 @@ export enum TabNames {
   timer = 'Timer'
 }
 
-export enum workoutTypeTabs {
+export enum WorkoutTabsType {
   straight = 'Straight',
   superset = 'superset',
   interval = 'interval',

@@ -1,10 +1,10 @@
-import { DisplayActions, WorkoutType } from "./display-reducer-types"
+import { DisplayAction, DisplayActions, Error, } from "./display-reducer-types"
 
 class DisplayReducerActionCreator {
-  setWorkoutType(workoutType: WorkoutType) {
+  openErrorModal(error: Error): DisplayAction {
     return {
-      type: DisplayActions.SET_WORKOUT_TYPE,
-      workoutType
+      type: DisplayActions.OPEN_ERROR_MODAL,
+      error
     }
   }
 }

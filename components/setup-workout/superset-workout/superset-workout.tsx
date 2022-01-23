@@ -5,9 +5,9 @@ import { useIsFocused } from '@react-navigation/native'
 
 import { useDispatch } from 'react-redux'
 
-import displayReducerActionCreator from '../../../store/reducers/display-reducer/display-reducer-action-creators'
+import newWorkoutReducerActionCreator from '../../../store/reducers/new-workout-reducer/new-workout-reducer-action-creators'
 
-import { WorkoutType } from '../../../store/reducers/display-reducer/display-reducer-types'
+import { WorkoutType } from '../../../store/reducers/new-workout-reducer/new-workout-reducer-types'
 
 const SupersetWorkout = () => {
   const dispatch = useDispatch()
@@ -15,7 +15,7 @@ const SupersetWorkout = () => {
 
   useEffect(() => {
     if (isFocused) {
-      dispatch(displayReducerActionCreator.setWorkoutType(WorkoutType.SUPERSET))
+      dispatch(newWorkoutReducerActionCreator.setNewWorkoutType(WorkoutType.SUPERSET))
     }
   })
 

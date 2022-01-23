@@ -1,18 +1,24 @@
 export enum DisplayActions {
-  SET_WORKOUT_TYPE = 'SET_WORKOUT_TYPE',
+  OPEN_ERROR_MODAL = 'OPEN_ERROR_MODAL',
+  CLOSE_MODAL = 'CLOSE_MODAL'
 }
 
 
+export enum Modal {
+  error = 'error'
+}
+
+export interface Error {
+  title: string,
+  message: string,
+  details: string,
+}
+
 export interface DisplayState {
-  workoutType: string | null
+  error: Error | null,
+  modal: Modal | null
 }
 
 export type DisplayAction =
-  | { type: DisplayActions.SET_WORKOUT_TYPE, workoutType: WorkoutType }
-
-
-export enum WorkoutType {
-  STRAIGHT = 'STRAIGHT',
-  SUPERSET = 'SUPERSET',
-  INTERVAL = 'INTERVAL',
-}
+  | { type: DisplayActions.OPEN_ERROR_MODAL, error: Error }
+  | { type: DisplayActions.CLOSE_MODAL }

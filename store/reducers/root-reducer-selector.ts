@@ -8,6 +8,11 @@ class RootStateReducer {
     this.getRootStateReducer,
     (state) => state.display
   )
+
+  getNewWorkoutReducer = createSelector(
+    this.getRootStateReducer,
+    (state) => state.newWorkout
+  )
 }
 
 const rootStateReducer = new RootStateReducer()

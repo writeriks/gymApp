@@ -5,9 +5,9 @@ import { useIsFocused } from '@react-navigation/native'
 
 import { useDispatch } from 'react-redux'
 
-import displayReducerActionCreator from '../../../store/reducers/display-reducer/display-reducer-action-creators'
+import newWorkoutReducerActionCreator from '../../../store/reducers/new-workout-reducer/new-workout-reducer-action-creators'
 
-import { WorkoutType } from '../../../store/reducers/display-reducer/display-reducer-types'
+import { WorkoutType } from '../../../store/reducers/new-workout-reducer/new-workout-reducer-types'
 
 const IntervalWorkout = () => {
   const isFocus = useIsFocused()
@@ -15,7 +15,7 @@ const IntervalWorkout = () => {
 
   useEffect(() => {
     if (isFocus) {
-      dispatch(displayReducerActionCreator.setWorkoutType(WorkoutType.INTERVAL))
+      dispatch(newWorkoutReducerActionCreator.setNewWorkoutType(WorkoutType.INTERVAL))
     }
   }, [isFocus])
 
