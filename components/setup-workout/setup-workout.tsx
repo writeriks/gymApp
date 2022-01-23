@@ -4,9 +4,9 @@ import { View, StyleSheet } from 'react-native';
 import SaveButton from '../util/save-button/save-button';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
-import StraightWorkout from './straight-workout';
-import SupersetWorkout from './superset-workout';
-import IntervalWorkout from './interval-workout';
+import StraightWorkout from './straight-workout/straight-workout';
+import SupersetWorkout from './superset-workout/superset-workout';
+import IntervalWorkout from './interval-workout/interval-workout';
 
 import { workoutTypeTabs } from '../../types/types';
 
