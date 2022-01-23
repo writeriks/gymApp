@@ -37,6 +37,8 @@ const StraightWorkout = () => {
           </Text>
         </TouchableHighlight>
       </View>
+
+
     </ScrollView>
   )
 }

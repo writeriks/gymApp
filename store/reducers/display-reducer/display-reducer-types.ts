@@ -3,7 +3,6 @@ export enum DisplayActions {
   CLOSE_MODAL = 'CLOSE_MODAL'
 }
 
-
 export enum Modal {
   error = 'error'
 }
