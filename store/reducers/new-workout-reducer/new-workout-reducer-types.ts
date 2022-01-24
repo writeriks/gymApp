@@ -14,7 +14,7 @@ export interface NewWorkoutState {
 }
 
 export interface NewWorkoutSet {
-  id: number,
+  id: string,
   workoutName: string,
   weight?: string,
   repeat?: string,
@@ -24,12 +24,12 @@ export interface NewWorkoutSet {
 
 export type NewWorkoutAction =
   | { type: NewWorkoutActions.SET_NEW_WORKOUT_TYPE, newWorkoutType: WorkoutType }
-  | { type: NewWorkoutActions.ADD_NEW_WORKOUT_SET, newWorkoutSet: NewWorkoutSet }
-  | { type: NewWorkoutActions.MODIFY_NEW_WORKOUT_SET_NAME, workoutName: string, newWorkoutSetId: number }
-  | { type: NewWorkoutActions.MODIFY_NEW_WORKOUT_SET_WEIGHT, weight: string, newWorkoutSetId: number }
-  | { type: NewWorkoutActions.MODIFY_NEW_WORKOUT_SET_REPEAT, repeat: string, newWorkoutSetId: number }
-  | { type: NewWorkoutActions.MODIFY_NEW_WORKOUT_SET_DURATION, duration: string, newWorkoutSetId: number }
-  | { type: NewWorkoutActions.REMOVE_NEW_WORKOUT_SET, newWorkoutSetId: number }
+  | { type: NewWorkoutActions.ADD_NEW_WORKOUT_SET, newWorkoutSet: NewWorkoutSet[] }
+  | { type: NewWorkoutActions.MODIFY_NEW_WORKOUT_SET_NAME, workoutName: string, newWorkoutSetId: string }
+  | { type: NewWorkoutActions.MODIFY_NEW_WORKOUT_SET_WEIGHT, weight: string, newWorkoutSetId: string }
+  | { type: NewWorkoutActions.MODIFY_NEW_WORKOUT_SET_REPEAT, repeat: string, newWorkoutSetId: string }
+  | { type: NewWorkoutActions.MODIFY_NEW_WORKOUT_SET_DURATION, duration: string, newWorkoutSetId: string }
+  | { type: NewWorkoutActions.REMOVE_NEW_WORKOUT_SET, newWorkoutSetId: string }
 
 
 export enum WorkoutType {

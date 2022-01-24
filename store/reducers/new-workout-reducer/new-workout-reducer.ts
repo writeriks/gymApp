@@ -1,4 +1,4 @@
-import newWorkoutReducerHeelper from "./new-workout-reducer-helper"
+import newWorkoutReducerHelper from "./new-workout-reducer-helper"
 import { NewWorkoutAction, NewWorkoutActions, NewWorkoutState } from "./new-workout-reducer-types"
 
 
@@ -16,11 +16,12 @@ const newWorkoutReducer = (state: NewWorkoutState = initialDisplayState, action:
       }
     }
     case NewWorkoutActions.ADD_NEW_WORKOUT_SET: {
+      const { newWorkoutSet } = action
       return {
         ...state,
         newWorkoutSets: [
           ...state.newWorkoutSets,
-          action.newWorkoutSet
+          ...newWorkoutSet
         ]
       }
     }
@@ -28,7 +29,7 @@ const newWorkoutReducer = (state: NewWorkoutState = initialDisplayState, action:
       const newWorkoutSets = [...state.newWorkoutSets]
 
       const { newWorkoutSetId, workoutName } = action
-      const index = newWorkoutReducerHeelper.findModifiedWorkoutSetIndex(newWorkoutSets, newWorkoutSetId)
+      const index = newWorkoutReducerHelper.findModifiedWorkoutSetIndex(newWorkoutSets, newWorkoutSetId)
       newWorkoutSets[index].workoutName = workoutName;
 
       return {
@@ -41,7 +42,7 @@ const newWorkoutReducer = (state: NewWorkoutState = initialDisplayState, action:
       const newWorkoutSets = [...state.newWorkoutSets]
 
       const { newWorkoutSetId, duration } = action
-      const index = newWorkoutReducerHeelper.findModifiedWorkoutSetIndex(newWorkoutSets, newWorkoutSetId)
+      const index = newWorkoutReducerHelper.findModifiedWorkoutSetIndex(newWorkoutSets, newWorkoutSetId)
       newWorkoutSets[index].duration = duration;
 
       return {
@@ -54,7 +55,7 @@ const newWorkoutReducer = (state: NewWorkoutState = initialDisplayState, action:
       const newWorkoutSets = [...state.newWorkoutSets]
 
       const { newWorkoutSetId, repeat } = action
-      const index = newWorkoutReducerHeelper.findModifiedWorkoutSetIndex(newWorkoutSets, newWorkoutSetId)
+      const index = newWorkoutReducerHelper.findModifiedWorkoutSetIndex(newWorkoutSets, newWorkoutSetId)
       newWorkoutSets[index].duration = repeat;
 
       return {
@@ -67,7 +68,7 @@ const newWorkoutReducer = (state: NewWorkoutState = initialDisplayState, action:
       const newWorkoutSets = [...state.newWorkoutSets]
 
       const { newWorkoutSetId, weight } = action
-      const index = newWorkoutReducerHeelper.findModifiedWorkoutSetIndex(newWorkoutSets, newWorkoutSetId)
+      const index = newWorkoutReducerHelper.findModifiedWorkoutSetIndex(newWorkoutSets, newWorkoutSetId)
       newWorkoutSets[index].duration = weight;
 
       return {
@@ -80,7 +81,7 @@ const newWorkoutReducer = (state: NewWorkoutState = initialDisplayState, action:
       const newWorkoutSets = [...state.newWorkoutSets]
 
       const { newWorkoutSetId } = action
-      const index = newWorkoutReducerHeelper.findModifiedWorkoutSetIndex(newWorkoutSets, newWorkoutSetId)
+      const index = newWorkoutReducerHelper.findModifiedWorkoutSetIndex(newWorkoutSets, newWorkoutSetId)
       newWorkoutSets.splice(index, 1)
 
       return {
