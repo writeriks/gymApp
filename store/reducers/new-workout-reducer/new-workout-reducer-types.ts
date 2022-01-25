@@ -15,7 +15,7 @@ export interface NewWorkoutState {
 
 export interface NewWorkoutSet {
   id: string,
-  workoutName: string,
+  workoutName?: string,
   weight?: string,
   repeat?: string,
   duration?: string,

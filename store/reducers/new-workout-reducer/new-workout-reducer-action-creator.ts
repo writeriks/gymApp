@@ -38,6 +38,13 @@ class NewWorkoutReducerActionCreator {
       newWorkoutSetId
     }
   }
+
+  removeWorkoutSet(newWorkoutSetId: string) {
+    return {
+      type: NewWorkoutActions.REMOVE_NEW_WORKOUT_SET,
+      newWorkoutSetId
+    }
+  }
 }
 
 const newWorkoutReducerActionCreator = new NewWorkoutReducerActionCreator()

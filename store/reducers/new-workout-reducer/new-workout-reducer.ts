@@ -56,7 +56,7 @@ const newWorkoutReducer = (state: NewWorkoutState = initialDisplayState, action:
 
       const { newWorkoutSetId, repeat } = action
       const index = newWorkoutReducerHelper.findModifiedWorkoutSetIndex(newWorkoutSets, newWorkoutSetId)
-      newWorkoutSets[index].duration = repeat;
+      newWorkoutSets[index].repeat = repeat;
 
       return {
         ...state,
