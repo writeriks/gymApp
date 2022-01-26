@@ -11,12 +11,17 @@ class SetupWorkoutHelper {
 
   modifyRepeat(repeat: string, newWorkoutSetId: string): void {
     // @ts-expect-error
-    store.dispatch(newWorkoutReducerActionCreator.modifyWorkoutRepeat(repeat, newWorkoutSetId))
+    store.dispatch(newWorkoutReducerActionCreator.modifyNewWorkoutRepeat(repeat, newWorkoutSetId))
   }
 
-  removeWorkoutSet(newWorkoutSetId: string): void {
+  modifyWeight(weight: string, newWorkoutSetId: string): void {
     // @ts-expect-error
-    store.dispatch(newWorkoutReducerActionCreator.removeWorkoutSet(newWorkoutSetId))
+    store.dispatch(newWorkoutReducerActionCreator.modifyNewWorkoutWeight(weight, newWorkoutSetId))
+  }
+
+  removeNewWorkoutSet(newWorkoutSetId: string): void {
+    // @ts-expect-error
+    store.dispatch(newWorkoutReducerActionCreator.removeNewWorkoutSet(newWorkoutSetId))
   }
 }
 

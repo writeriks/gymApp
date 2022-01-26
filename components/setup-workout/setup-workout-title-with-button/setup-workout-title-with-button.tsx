@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, TouchableHighlight, View } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 import setupWorkoutHelper from '../setup-workout-helper';
 
@@ -15,15 +16,14 @@ const SetupworkoutTitleWithButton: React.FC<TitleWithButtonProps> = ({ titleName
       <Text style={setupWorkoutTitleWithButtonStyle.setsText}>
         {titleName}
       </Text>
-      <TouchableHighlight
+      <TouchableOpacity
         activeOpacity={0.6}
-        underlayColor='white'
         /* @ts-ignore */
         onPress={() => setupWorkoutHelper.appendSetRow()}>
         <Text style={setupWorkoutTitleWithButtonStyle.addButton}>
-          Add
+          +
         </Text>
-      </TouchableHighlight>
+      </TouchableOpacity>
     </View>
   )
 };

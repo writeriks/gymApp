@@ -1,4 +1,6 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
+
+const windowWidth = Dimensions.get('window').width;
 
 
 export const setupworkoutRowStyle = StyleSheet.create({
@@ -10,7 +12,7 @@ export const setupworkoutRowStyle = StyleSheet.create({
     alignItems: "center",
   },
   workoutRowSetNumberContainer: {
-    width: 20,
+    width: 30,
     height: 50,
     display: "flex",
     alignItems: "center",
@@ -21,17 +23,17 @@ export const setupworkoutRowStyle = StyleSheet.create({
     fontWeight: "600",
   },
   workoutRowInputContainer: {
-    width: "calc(100% - 50px)",
+    width: windowWidth - 80,
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-around"
+    justifyContent: "space-evenly"
   },
   workoutRowTextField: {
     width: "40%",
     height: 30,
-    marginLeft: 10,
     paddingLeft: 10,
-    border: "1px solid",
+    borderBottomWidth: 1,
+    borderRadius: 3,
   },
   removeIconContainer: {
     width: 25,

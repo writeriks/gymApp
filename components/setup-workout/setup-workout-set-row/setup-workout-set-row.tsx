@@ -6,7 +6,6 @@ import setupWorkoutHelper from '../setup-workout-helper';
 
 import { setupworkoutRowStyle } from './setup-workout-row-style';
 import { NewWorkoutSet } from '../../../store/reducers/new-workout-reducer/new-workout-reducer-types';
-import { useDispatch } from 'react-redux';
 
 export interface SetupWorkoutSetRowProps {
   newWorkoutSet: NewWorkoutSet,
@@ -14,7 +13,9 @@ export interface SetupWorkoutSetRowProps {
 }
 
 const SetupWorkoutSetRow: React.FC<SetupWorkoutSetRowProps> = ({ newWorkoutSet, index }) => {
-  const dispatch = useDispatch();
+
+  const weightValue = newWorkoutSet.weight || '';
+  const repeatValue = newWorkoutSet.repeat || '';
 
   return (
     <View style={setupworkoutRowStyle.workoutRowContainer}>
@@ -28,21 +29,22 @@ const SetupWorkoutSetRow: React.FC<SetupWorkoutSetRowProps> = ({ newWorkoutSet, 
 
       <View style={setupworkoutRowStyle.workoutRowInputContainer}>
         <TextInput
-          keyboardType='numeric'
+          keyboardType='number-pad'
           style={setupworkoutRowStyle.workoutRowTextField}
-          value={newWorkoutSet.weight || ''}
-          placeholder='weight' />
+          value={weightValue}
+          placeholder='weight'
+          onChange={(e) => setupWorkoutHelper.modifyWeight(e.nativeEvent.text, newWorkoutSet.id)} />
         <TextInput
-          keyboardType='numeric'
+          keyboardType='number-pad'
           style={setupworkoutRowStyle.workoutRowTextField}
-          value={newWorkoutSet.repeat || ''}
+          value={repeatValue}
           placeholder='repeats'
           onChange={(e) => setupWorkoutHelper.modifyRepeat(e.nativeEvent.text, newWorkoutSet.id)} />
       </View>
 
       <TouchableOpacity
         style={setupworkoutRowStyle.removeIconContainer}
-        onPress={() => setupWorkoutHelper.removeWorkoutSet(newWorkoutSet.id)}>
+        onPress={() => setupWorkoutHelper.removeNewWorkoutSet(newWorkoutSet.id)}>
         <Image
           style={setupworkoutRowStyle.removeIconImage}
           source={require('../../../assets/gym-app-icons/remove-icon.png')} />

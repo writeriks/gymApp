@@ -15,7 +15,7 @@ class NewWorkoutReducerActionCreator {
     }
   }
 
-  modifyDuration(duration: string, newWorkoutSetId: string) {
+  modifyNewWorkoutDuration(duration: string, newWorkoutSetId: string) {
     return {
       type: NewWorkoutActions.MODIFY_NEW_WORKOUT_SET_DURATION,
       duration,
@@ -23,7 +23,7 @@ class NewWorkoutReducerActionCreator {
     }
   }
 
-  modifyWorkoutName(workoutName: string, newWorkoutSetId: string) {
+  modifyNewWorkoutName(workoutName: string, newWorkoutSetId: string) {
     return {
       type: NewWorkoutActions.MODIFY_NEW_WORKOUT_SET_NAME,
       workoutName,
@@ -31,7 +31,7 @@ class NewWorkoutReducerActionCreator {
     }
   }
 
-  modifyWorkoutRepeat(repeat: string, newWorkoutSetId: string) {
+  modifyNewWorkoutRepeat(repeat: string, newWorkoutSetId: string) {
     return {
       type: NewWorkoutActions.MODIFY_NEW_WORKOUT_SET_REPEAT,
       repeat,
@@ -39,7 +39,15 @@ class NewWorkoutReducerActionCreator {
     }
   }
 
-  removeWorkoutSet(newWorkoutSetId: string) {
+  modifyNewWorkoutWeight(weight: string, newWorkoutSetId: string) {
+    return {
+      type: NewWorkoutActions.MODIFY_NEW_WORKOUT_SET_WEIGHT,
+      weight,
+      newWorkoutSetId
+    }
+  }
+
+  removeNewWorkoutSet(newWorkoutSetId: string) {
     return {
       type: NewWorkoutActions.REMOVE_NEW_WORKOUT_SET,
       newWorkoutSetId

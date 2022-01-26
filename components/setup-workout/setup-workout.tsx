@@ -1,5 +1,6 @@
-import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import React, { useEffect } from 'react';
+import { View, StyleSheet, AppState } from 'react-native';
+import { useIsFocused } from '@react-navigation/native'
 
 import SaveButton from '../util/save-button/save-button';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
@@ -23,6 +24,12 @@ const SetupWorkout: React.FC<SetupWorkoutProps> = ({ navigation }) => {
       flexDirection: 'column'
     },
   });
+
+  const isFocused = useIsFocused()
+
+  useEffect(() => {
+    console.log("focused", isFocused)
+  }, [isFocused])
 
   return (
     <View style={styles.mainView}>

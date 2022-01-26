@@ -8,11 +8,11 @@ export const setupWorkoutTitleWithButtonStyle = StyleSheet.create({
   },
   setsText: {
     fontWeight: 'bold',
-    fontSize: 20,
+    fontSize: 30,
   },
   addButton: {
     paddingRight: 10,
-    fontSize: 20,
+    fontSize: 30,
     color: '#4181ff'
   }
 })

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Text, View } from 'react-native'
+import { Text, TouchableWithoutFeedback, View, Keyboard } from 'react-native'
 
 import { useIsFocused } from '@react-navigation/native'
 
@@ -18,8 +18,7 @@ const StraightWorkout = () => {
   const isFocused = useIsFocused()
   const dispatch = useDispatch()
 
-  const workoutSets = useSelector(newWorkoutReducerSelector.getNewWorkoutSets)
-  console.log("🚀 ~ file: straight-workout.tsx ~ line 22 ~ StraightWorkout ~ workoutSets", workoutSets)
+  const newWorkoutSets = useSelector(newWorkoutReducerSelector.getNewWorkoutSets)
 
   useEffect(() => {
     if (isFocused) {
@@ -28,18 +27,27 @@ const StraightWorkout = () => {
   }, [isFocused])
 
   return (
-    <View style={straightWorkoutStyle.mainView}>
-      <SetupworkoutTitleWithButton
-        titleName='Sets'
-      />
-      <ScrollView style={straightWorkoutStyle.scrollView}>
-        {workoutSets.map((workoutSet, index) =>
-          <View key={workoutSet.id}>
-            <SetupWorkoutSetRow newWorkoutSet={workoutSet} index={index} />
-          </View>
-        )}
-      </ScrollView>
-    </View>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <View style={straightWorkoutStyle.mainView}>
+        <SetupworkoutTitleWithButton
+          titleName='Sets'
+        />
+
+        <View style={straightWorkoutStyle.workoutTitleContainer}>
+          <TextInput
+            style={straightWorkoutStyle.workoutTitleInput}
+            placeholder='Workout Name' />
+        </View>
+
+        <ScrollView style={straightWorkoutStyle.scrollView}>
+          {newWorkoutSets.map((workoutSet, index) =>
+            <View key={workoutSet.id}>
+              <SetupWorkoutSetRow newWorkoutSet={workoutSet} index={index} />
+            </View>
+          )}
+        </ScrollView>
+      </View>
+    </TouchableWithoutFeedback>
   )
 }
 

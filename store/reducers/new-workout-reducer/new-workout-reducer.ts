@@ -69,7 +69,7 @@ const newWorkoutReducer = (state: NewWorkoutState = initialDisplayState, action:
 
       const { newWorkoutSetId, weight } = action
       const index = newWorkoutReducerHelper.findModifiedWorkoutSetIndex(newWorkoutSets, newWorkoutSetId)
-      newWorkoutSets[index].duration = weight;
+      newWorkoutSets[index].weight = weight;
 
       return {
         ...state,
