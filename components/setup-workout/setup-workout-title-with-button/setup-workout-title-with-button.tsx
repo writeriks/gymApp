@@ -19,7 +19,7 @@ const SetupworkoutTitleWithButton: React.FC<TitleWithButtonProps> = ({ titleName
       <TouchableOpacity
         activeOpacity={0.6}
         /* @ts-ignore */
-        onPress={() => setupWorkoutHelper.appendSetRow()}>
+        onPress={() => setupWorkoutHelper.appendNewStraightWorkoutSetRow()}>
         <Text style={setupWorkoutTitleWithButtonStyle.addButton}>
           +
         </Text>

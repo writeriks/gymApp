@@ -13,12 +13,15 @@ import { straightWorkoutStyle } from './straight-workout-style'
 import SetupworkoutTitleWithButton from '../setup-workout-title-with-button/setup-workout-title-with-button'
 import newWorkoutReducerSelector from '../../../store/reducers/new-workout-reducer/new-workout-reducer-selector'
 import SetupWorkoutSetRow from '../setup-workout-set-row/setup-workout-set-row'
+import setupWorkoutHelper from '../setup-workout-helper'
 
 const StraightWorkout = () => {
   const isFocused = useIsFocused()
   const dispatch = useDispatch()
 
-  const newWorkoutSets = useSelector(newWorkoutReducerSelector.getNewWorkoutSets)
+  const newWorkoutSets = useSelector(newWorkoutReducerSelector.getNewStraightWorkoutSets)
+  const straightWorkoutName = useSelector(newWorkoutReducerSelector.getNewStraightWorkoutName)
+  console.log("🚀 ~ file: straight-workout.tsx ~ line 25 ~ StraightWorkout ~ straightWorkoutName", straightWorkoutName)
 
   useEffect(() => {
     if (isFocused) {
@@ -36,6 +39,8 @@ const StraightWorkout = () => {
         <View style={straightWorkoutStyle.workoutTitleContainer}>
           <TextInput
             style={straightWorkoutStyle.workoutTitleInput}
+            value={straightWorkoutName}
+            onChange={(e) => setupWorkoutHelper.modifyNewStraightWorkoutName(e.nativeEvent.text)}
             placeholder='Workout Name' />
         </View>
 

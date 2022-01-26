@@ -4,24 +4,29 @@ import newWorkoutReducerActionCreator from "../../store/reducers/new-workout-red
 import newWorkoutReducerHelper from "../../store/reducers/new-workout-reducer/new-workout-reducer-helper";
 
 class SetupWorkoutHelper {
-  appendSetRow(): void {
+  appendNewStraightWorkoutSetRow(): void {
     // @ts-expect-error
-    store.dispatch(newWorkoutReducerActionCreator.addNewWorkoutSet([newWorkoutReducerHelper.getEmptyNewWorkoutSet()]))
+    store.dispatch(newWorkoutReducerActionCreator.addNewStraightWorkoutSet([newWorkoutReducerHelper.getEmptyNewWorkoutSet()]))
   }
 
-  modifyRepeat(repeat: string, newWorkoutSetId: string): void {
+  modifyNewStraightWorkoutSetRepeat(repeat: string, newWorkoutSetId: string): void {
     // @ts-expect-error
-    store.dispatch(newWorkoutReducerActionCreator.modifyNewWorkoutRepeat(repeat, newWorkoutSetId))
+    store.dispatch(newWorkoutReducerActionCreator.modifyNewStraightWorkoutRepeat(repeat, newWorkoutSetId))
   }
 
-  modifyWeight(weight: string, newWorkoutSetId: string): void {
+  modifyNewStraightWorkoutName(name: string): void {
     // @ts-expect-error
-    store.dispatch(newWorkoutReducerActionCreator.modifyNewWorkoutWeight(weight, newWorkoutSetId))
+    store.dispatch(newWorkoutReducerActionCreator.modifyNewStraightWorkoutName(name))
   }
 
-  removeNewWorkoutSet(newWorkoutSetId: string): void {
+  modifyNewStraightWorkoutSetWeight(weight: string, newWorkoutSetId: string): void {
     // @ts-expect-error
-    store.dispatch(newWorkoutReducerActionCreator.removeNewWorkoutSet(newWorkoutSetId))
+    store.dispatch(newWorkoutReducerActionCreator.modifyNewStraightWorkoutWeight(weight, newWorkoutSetId))
+  }
+
+  removeNewStraightWorkoutSet(newWorkoutSetId: string): void {
+    // @ts-expect-error
+    store.dispatch(newWorkoutReducerActionCreator.removeNewStraightWorkoutSet(newWorkoutSetId))
   }
 }
 

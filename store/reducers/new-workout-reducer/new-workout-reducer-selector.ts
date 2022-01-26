@@ -6,9 +6,13 @@ class NewWorkoutReducerSelector {
     rootStateReducer.getNewWorkoutReducer,
     (newWorkout) => newWorkout.newWorkoutType
   );
-  getNewWorkoutSets = createSelector(
+  getNewStraightWorkoutSets = createSelector(
     rootStateReducer.getNewWorkoutReducer,
-    (newWorkout) => newWorkout.newWorkoutSets
+    (newWorkout) => newWorkout.newStraightWorkoutSets
+  );
+  getNewStraightWorkoutName = createSelector(
+    rootStateReducer.getNewWorkoutReducer,
+    (newWorkout) => newWorkout.newStraightWorkoutName
   );
 }
 

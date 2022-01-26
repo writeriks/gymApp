@@ -4,7 +4,8 @@ import { NewWorkoutAction, NewWorkoutActions, NewWorkoutState } from "./new-work
 
 const initialDisplayState = {
   newWorkoutType: null,
-  newWorkoutSets: []
+  newStraightWorkoutName: null,
+  newStraightWorkoutSets: []
 }
 
 const newWorkoutReducer = (state: NewWorkoutState = initialDisplayState, action: NewWorkoutAction): NewWorkoutState => {
@@ -15,44 +16,27 @@ const newWorkoutReducer = (state: NewWorkoutState = initialDisplayState, action:
         newWorkoutType: action.newWorkoutType
       }
     }
-    case NewWorkoutActions.ADD_NEW_WORKOUT_SET: {
+    case NewWorkoutActions.ADD_NEW_STRAIGHT_WORKOUT_SET: {
       const { newWorkoutSet } = action
       return {
         ...state,
-        newWorkoutSets: [
-          ...state.newWorkoutSets,
+        newStraightWorkoutSets: [
+          ...state.newStraightWorkoutSets,
           ...newWorkoutSet
         ]
       }
     }
-    case NewWorkoutActions.MODIFY_NEW_WORKOUT_SET_NAME: {
-      const newWorkoutSets = [...state.newWorkoutSets]
 
-      const { newWorkoutSetId, workoutName } = action
-      const index = newWorkoutReducerHelper.findModifiedWorkoutSetIndex(newWorkoutSets, newWorkoutSetId)
-      newWorkoutSets[index].workoutName = workoutName;
-
+    case NewWorkoutActions.SET_NEW_STRAIGHT_WORKOUT_NAME: {
+      const { newStraightWorkoutName } = action
       return {
         ...state,
-        newWorkoutSets
+        newStraightWorkoutName
       }
     }
 
-    case NewWorkoutActions.MODIFY_NEW_WORKOUT_SET_DURATION: {
-      const newWorkoutSets = [...state.newWorkoutSets]
-
-      const { newWorkoutSetId, duration } = action
-      const index = newWorkoutReducerHelper.findModifiedWorkoutSetIndex(newWorkoutSets, newWorkoutSetId)
-      newWorkoutSets[index].duration = duration;
-
-      return {
-        ...state,
-        newWorkoutSets
-      }
-    }
-
-    case NewWorkoutActions.MODIFY_NEW_WORKOUT_SET_REPEAT: {
-      const newWorkoutSets = [...state.newWorkoutSets]
+    case NewWorkoutActions.MODIFY_NEW_STRAIGHT_WORKOUT_SET_REPEAT: {
+      const newWorkoutSets = [...state.newStraightWorkoutSets]
 
       const { newWorkoutSetId, repeat } = action
       const index = newWorkoutReducerHelper.findModifiedWorkoutSetIndex(newWorkoutSets, newWorkoutSetId)
@@ -60,12 +44,12 @@ const newWorkoutReducer = (state: NewWorkoutState = initialDisplayState, action:
 
       return {
         ...state,
-        newWorkoutSets
+        newStraightWorkoutSets: newWorkoutSets
       }
     }
 
-    case NewWorkoutActions.MODIFY_NEW_WORKOUT_SET_WEIGHT: {
-      const newWorkoutSets = [...state.newWorkoutSets]
+    case NewWorkoutActions.MODIFY_NEW_STRAIGHT_WORKOUT_SET_WEIGHT: {
+      const newWorkoutSets = [...state.newStraightWorkoutSets]
 
       const { newWorkoutSetId, weight } = action
       const index = newWorkoutReducerHelper.findModifiedWorkoutSetIndex(newWorkoutSets, newWorkoutSetId)
@@ -73,12 +57,12 @@ const newWorkoutReducer = (state: NewWorkoutState = initialDisplayState, action:
 
       return {
         ...state,
-        newWorkoutSets
+        newStraightWorkoutSets: newWorkoutSets
       }
     }
 
     case NewWorkoutActions.REMOVE_NEW_WORKOUT_SET: {
-      const newWorkoutSets = [...state.newWorkoutSets]
+      const newWorkoutSets = [...state.newStraightWorkoutSets]
 
       const { newWorkoutSetId } = action
       const index = newWorkoutReducerHelper.findModifiedWorkoutSetIndex(newWorkoutSets, newWorkoutSetId)
@@ -86,9 +70,36 @@ const newWorkoutReducer = (state: NewWorkoutState = initialDisplayState, action:
 
       return {
         ...state,
-        newWorkoutSets
+        newStraightWorkoutSets: newWorkoutSets
       }
     }
+
+    /*     case NewWorkoutActions.MODIFY_NEW_WORKOUT_SET_NAME: {
+          const newWorkoutSets = [...state.newStraightWorkoutSets]
+    
+          const { newWorkoutSetId, workoutName } = action
+          const index = newWorkoutReducerHelper.findModifiedWorkoutSetIndex(newWorkoutSets, newWorkoutSetId)
+          newWorkoutSets[index].workoutName = workoutName;
+    
+          return {
+            ...state,
+            newStraightWorkoutSets: newWorkoutSets
+          }
+        }
+    
+        case NewWorkoutActions.MODIFY_NEW_WORKOUT_SET_DURATION: {
+          const newWorkoutSets = [...state.newStraightWorkoutSets]
+    
+          const { newWorkoutSetId, duration } = action
+          const index = newWorkoutReducerHelper.findModifiedWorkoutSetIndex(newWorkoutSets, newWorkoutSetId)
+          newWorkoutSets[index].duration = duration;
+    
+          return {
+            ...state,
+            newStraightWorkoutSets: newWorkoutSets
+          }
+        } */
+
     default:
       return state
   }

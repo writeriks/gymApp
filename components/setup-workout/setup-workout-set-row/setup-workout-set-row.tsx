@@ -5,10 +5,10 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import setupWorkoutHelper from '../setup-workout-helper';
 
 import { setupworkoutRowStyle } from './setup-workout-row-style';
-import { NewWorkoutSet } from '../../../store/reducers/new-workout-reducer/new-workout-reducer-types';
+import { NewStraightWorkout } from '../../../store/reducers/new-workout-reducer/new-workout-reducer-types';
 
 export interface SetupWorkoutSetRowProps {
-  newWorkoutSet: NewWorkoutSet,
+  newWorkoutSet: NewStraightWorkout,
   index: number
 }
 
@@ -33,18 +33,18 @@ const SetupWorkoutSetRow: React.FC<SetupWorkoutSetRowProps> = ({ newWorkoutSet, 
           style={setupworkoutRowStyle.workoutRowTextField}
           value={weightValue}
           placeholder='weight'
-          onChange={(e) => setupWorkoutHelper.modifyWeight(e.nativeEvent.text, newWorkoutSet.id)} />
+          onChange={(e) => setupWorkoutHelper.modifyNewStraightWorkoutSetWeight(e.nativeEvent.text, newWorkoutSet.id)} />
         <TextInput
           keyboardType='number-pad'
           style={setupworkoutRowStyle.workoutRowTextField}
           value={repeatValue}
           placeholder='repeats'
-          onChange={(e) => setupWorkoutHelper.modifyRepeat(e.nativeEvent.text, newWorkoutSet.id)} />
+          onChange={(e) => setupWorkoutHelper.modifyNewStraightWorkoutSetRepeat(e.nativeEvent.text, newWorkoutSet.id)} />
       </View>
 
       <TouchableOpacity
         style={setupworkoutRowStyle.removeIconContainer}
-        onPress={() => setupWorkoutHelper.removeNewWorkoutSet(newWorkoutSet.id)}>
+        onPress={() => setupWorkoutHelper.removeNewStraightWorkoutSet(newWorkoutSet.id)}>
         <Image
           style={setupworkoutRowStyle.removeIconImage}
           source={require('../../../assets/gym-app-icons/remove-icon.png')} />

@@ -1,4 +1,4 @@
-import { NewWorkoutActions, NewWorkoutSet, WorkoutType } from "./new-workout-reducer-types"
+import { NewWorkoutActions, NewStraightWorkout, WorkoutType } from "./new-workout-reducer-types"
 
 class NewWorkoutReducerActionCreator {
   setNewWorkoutType(newWorkoutType: WorkoutType) {
@@ -8,10 +8,40 @@ class NewWorkoutReducerActionCreator {
     }
   }
 
-  addNewWorkoutSet(newWorkoutSet: NewWorkoutSet[]) {
+  addNewStraightWorkoutSet(newWorkoutSet: NewStraightWorkout[]) {
     return {
-      type: NewWorkoutActions.ADD_NEW_WORKOUT_SET,
+      type: NewWorkoutActions.ADD_NEW_STRAIGHT_WORKOUT_SET,
       newWorkoutSet
+    }
+  }
+
+  modifyNewStraightWorkoutName(newStraightWorkoutName: string) {
+    return {
+      type: NewWorkoutActions.SET_NEW_STRAIGHT_WORKOUT_NAME,
+      newStraightWorkoutName,
+    }
+  }
+
+  modifyNewStraightWorkoutRepeat(repeat: string, newWorkoutSetId: string) {
+    return {
+      type: NewWorkoutActions.MODIFY_NEW_STRAIGHT_WORKOUT_SET_REPEAT,
+      repeat,
+      newWorkoutSetId
+    }
+  }
+
+  modifyNewStraightWorkoutWeight(weight: string, newWorkoutSetId: string) {
+    return {
+      type: NewWorkoutActions.MODIFY_NEW_STRAIGHT_WORKOUT_SET_WEIGHT,
+      weight,
+      newWorkoutSetId
+    }
+  }
+
+  removeNewStraightWorkoutSet(newWorkoutSetId: string) {
+    return {
+      type: NewWorkoutActions.REMOVE_NEW_WORKOUT_SET,
+      newWorkoutSetId
     }
   }
 
@@ -23,36 +53,7 @@ class NewWorkoutReducerActionCreator {
     }
   }
 
-  modifyNewWorkoutName(workoutName: string, newWorkoutSetId: string) {
-    return {
-      type: NewWorkoutActions.MODIFY_NEW_WORKOUT_SET_NAME,
-      workoutName,
-      newWorkoutSetId
-    }
-  }
 
-  modifyNewWorkoutRepeat(repeat: string, newWorkoutSetId: string) {
-    return {
-      type: NewWorkoutActions.MODIFY_NEW_WORKOUT_SET_REPEAT,
-      repeat,
-      newWorkoutSetId
-    }
-  }
-
-  modifyNewWorkoutWeight(weight: string, newWorkoutSetId: string) {
-    return {
-      type: NewWorkoutActions.MODIFY_NEW_WORKOUT_SET_WEIGHT,
-      weight,
-      newWorkoutSetId
-    }
-  }
-
-  removeNewWorkoutSet(newWorkoutSetId: string) {
-    return {
-      type: NewWorkoutActions.REMOVE_NEW_WORKOUT_SET,
-      newWorkoutSetId
-    }
-  }
 }
 
 const newWorkoutReducerActionCreator = new NewWorkoutReducerActionCreator()
