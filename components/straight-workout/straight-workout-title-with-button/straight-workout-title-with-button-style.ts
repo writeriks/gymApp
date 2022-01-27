@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-export const setupWorkoutTitleWithButtonStyle = StyleSheet.create({
+export const straightWorkoutTitleWithButtonStyle = StyleSheet.create({
   setContainer: {
     display: 'flex',
     flexDirection: 'row',

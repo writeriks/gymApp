@@ -5,9 +5,9 @@ import { useIsFocused } from '@react-navigation/native'
 import SaveButton from '../util/save-button/save-button';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
-import StraightWorkout from './straight-workout/straight-workout';
-import SupersetWorkout from './superset-workout/superset-workout';
-import IntervalWorkout from './interval-workout/interval-workout';
+import StraightWorkout from '../straight-workout/straight-workout';
+import SupersetWorkout from '../superset-workout/superset-workout';
+import IntervalWorkout from '../interval-workout/interval-workout';
 
 import { WorkoutTabsType } from '../../types/types';
 
@@ -24,12 +24,6 @@ const SetupWorkout: React.FC<SetupWorkoutProps> = ({ navigation }) => {
       flexDirection: 'column'
     },
   });
-
-  const isFocused = useIsFocused()
-
-  useEffect(() => {
-    console.log("focused", isFocused)
-  }, [isFocused])
 
   return (
     <View style={styles.mainView}>

@@ -1,9 +1,9 @@
-import { store } from "../../store/createStore";
+import { store } from "../../store/createStore"
+import newWorkoutReducerHelper from "../../store/reducers/new-workout-reducer/new-workout-reducer-helper"
+import newWorkoutReducerActionCreator from "../../store/reducers/new-workout-reducer/new-workout-reducer-action-creator"
 
-import newWorkoutReducerActionCreator from "../../store/reducers/new-workout-reducer/new-workout-reducer-action-creator";
-import newWorkoutReducerHelper from "../../store/reducers/new-workout-reducer/new-workout-reducer-helper";
 
-class SetupWorkoutHelper {
+class StraightWorkoutHelper {
   appendNewStraightWorkoutSetRow(): void {
     // @ts-expect-error
     store.dispatch(newWorkoutReducerActionCreator.addNewStraightWorkoutSet([newWorkoutReducerHelper.getEmptyNewWorkoutSet()]))
@@ -30,5 +30,5 @@ class SetupWorkoutHelper {
   }
 }
 
-const setupWorkoutHelper = new SetupWorkoutHelper()
-export default setupWorkoutHelper;
+const straightWorkoutHelper = new StraightWorkoutHelper()
+export default straightWorkoutHelper;

@@ -3,7 +3,7 @@ import { StyleSheet, Dimensions } from "react-native";
 const windowWidth = Dimensions.get('window').width;
 
 
-export const setupworkoutRowStyle = StyleSheet.create({
+export const straightworkoutRowStyle = StyleSheet.create({
   workoutRowContainer: {
     display: "flex",
     flexDirection: "row",

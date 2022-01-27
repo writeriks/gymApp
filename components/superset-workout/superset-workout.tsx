@@ -5,9 +5,9 @@ import { useIsFocused } from '@react-navigation/native'
 
 import { useDispatch } from 'react-redux'
 
-import newWorkoutReducerActionCreator from '../../../store/reducers/new-workout-reducer/new-workout-reducer-action-creator'
+import newWorkoutReducerActionCreator from '../../store/reducers/new-workout-reducer/new-workout-reducer-action-creator'
 
-import { WorkoutType } from '../../../store/reducers/new-workout-reducer/new-workout-reducer-types'
+import { WorkoutType } from '../../store/reducers/new-workout-reducer/new-workout-reducer-types'
 
 const SupersetWorkout = () => {
   const dispatch = useDispatch()

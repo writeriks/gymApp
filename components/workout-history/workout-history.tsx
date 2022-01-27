@@ -1,3 +1,4 @@
+import React from 'react'
 import { useIsFocused } from '@react-navigation/native';
 import { useEffect } from 'react';
 import { Text } from 'react-native';

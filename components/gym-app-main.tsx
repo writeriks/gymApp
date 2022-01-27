@@ -1,7 +1,10 @@
+import React from 'react';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import TabNavigationBar from './tab-navigation-bar/tab-navigation-bar';
 import SetupWorkout from './setup-workout/setup-workout';
+
 import { TabNames } from '../types/types';
 
 const RootStack = createStackNavigator();
